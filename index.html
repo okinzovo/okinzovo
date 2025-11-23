@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EvCharge Pro - 充电站投资决策系统</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: '#0ea5e9', // Sky 500
+              secondary: '#10b981', // Emerald 500
+              dark: '#0f172a', // Slate 900
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      /* Custom scrollbar for better aesthetics */
+      ::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #f1f5f9;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #cbd5e1;
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #94a3b8;
+      }
+
+      /* Print Styles for Report Export */
+      @media print {
+        @page {
+          margin: 1cm;
+        }
+        
+        /* Hide UI elements */
+        header, 
+        .no-print, 
+        button,
+        input[type="range"],
+        .hidden-print {
+          display: none !important;
+        }
+
+        /* Reset layout for print */
+        body, #root, main {
+          background-color: white;
+          color: black;
+          margin: 0;
+          padding: 0;
+          width: 100%;
+          height: auto;
+          overflow: visible;
+        }
+
+        /* Specific container adjustments */
+        .print-container {
+          box-shadow: none !important;
+          border: none !important;
+          width: 100% !important;
+          max-width: 100% !important;
+        }
+        
+        .print-content {
+          font-size: 12pt;
+          line-height: 1.5;
+        }
+
+        /* Ensure markdown headers look good */
+        h1, h2, h3 {
+          page-break-after: avoid;
+          color: #000;
+        }
+        
+        /* Expand scrollable areas */
+        .overflow-y-auto {
+          height: auto !important;
+          overflow: visible !important;
+        }
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react-markdown": "https://aistudiocdn.com/react-markdown@^10.1.0",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.554.0",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.30.0",
+    "recharts": "https://aistudiocdn.com/recharts@^3.5.0"
+  }
+}
+</script>
+</head>
+  <body class="bg-slate-50 text-slate-800 antialiased">
+    <div id="root"></div>
+  </body>
+</html>
